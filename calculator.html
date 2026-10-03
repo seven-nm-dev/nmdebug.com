@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Калькулятор проекта — NM DEV</title>
+    <meta
+      name="description"
+      content="Рассчитайте стоимость разработки мобильного приложения, Telegram-бота или сайта. Прозрачные цены, скидки за комплекс, срочность."
+    />
+    <meta
+      name="keywords"
+      content="калькулятор разработки, стоимость приложения, цена бота, цена сайта"
+    />
+    <meta name="author" content="NM DEV" />
+    <link rel="canonical" href="https://nmdebug.com/calculator.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Калькулятор проекта — NM DEV" />
+    <meta
+      property="og:description"
+      content="Рассчитайте стоимость разработки за 2 минуты."
+    />
+    <meta property="og:image" content="https://nmdebug.com/assets/logo.png" />
+    <meta property="og:url" content="https://nmdebug.com/calculator.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Калькулятор проекта — NM DEV" />
+    <meta
+      name="twitter:description"
+      content="Рассчитайте стоимость разработки за 2 минуты."
+    />
+    <meta name="twitter:image" content="https://nmdebug.com/assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div id="header-slot"></div>
+
+      <main class="main-content">
+        <section class="container">
+          <a href="index.html" class="back-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            <span data-i18n="back">Назад</span>
+          </a>
+
+          <div class="page-header">
+            <h1 class="page-header__title" id="calcTitle">
+              Калькулятор проекта
+            </h1>
+          </div>
+
+          <div class="calc-tabs">
+            <button class="calc-tab" data-type="mobile">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+              <span data-i18n="calc_title_mobile">Мобильное приложение</span>
+            </button>
+            <button class="calc-tab" data-type="bots">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="11" width="18" height="10" rx="2" />
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 7v4" />
+              </svg>
+              <span data-i18n="calc_title_bots">Telegram-бот</span>
+            </button>
+            <button class="calc-tab" data-type="web">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              <span data-i18n="calc_title_web">Веб-сайт</span>
+            </button>
+          </div>
+
+          <div class="calc-layout">
+            <div class="calc-main" id="calcMain"></div>
+
+            <aside class="calc-side">
+              <div class="currency-switcher" id="currencySwitcher"></div>
+
+              <div class="calc-budget">
+                <div class="calc-budget__label" data-i18n="calc_budget">
+                  Ориентировочный бюджет
+                </div>
+                <div class="calc-budget__value" id="calcPrice">~ 0 KGS</div>
+                <div class="calc-budget__deadline" id="calcDeadline"></div>
+              </div>
+
+              <button class="btn btn--cyan btn--lg btn--full" id="calcSendBtn">
+                <span data-i18n="calc_send_btn"
+                  >Отправить расчёт разработчику</span
+                >
+              </button>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer-slot"></div>
+    </div>
+
+    <div class="modal" id="calcModal">
+      <div class="modal__content">
+        <button class="modal__close" id="modalClose">×</button>
+        <h3 data-i18n="calc_modal_title">Оформление заявки</h3>
+        <p data-i18n="calc_modal_sub">Укажите контакты для детальной сметы:</p>
+
+        <form id="calcForm">
+          <div class="field">
+            <label class="field__label" data-i18n="calc_name">Ваше имя *</label>
+            <input type="text" class="field__input" name="name" required />
+            <div class="field__error" data-error-for="name"></div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" data-i18n="calc_company"
+              >Компания / Проект</label
+            >
+            <input type="text" class="field__input" name="company" />
+          </div>
+
+          <div class="field">
+            <label class="field__label" data-i18n="calc_phone"
+              >Телефон / WhatsApp *</label
+            >
+            <input type="tel" class="field__input" name="phone" required />
+            <div class="field__error" data-error-for="phone"></div>
+          </div>
+
+          <div class="field">
+            <label class="field__label">Комментарий к проекту</label>
+            <textarea
+              class="field__input"
+              name="comment"
+              rows="3"
+              placeholder="Опишите идею, пожелания, референсы..."
+            ></textarea>
+          </div>
+
+          <div class="modal__actions">
+            <button
+              type="button"
+              class="btn btn--telegram btn--full"
+              id="sendTelegram"
+            >
+              <span data-i18n="calc_send_telegram">Отправить в Telegram</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn--whatsapp btn--full"
+              id="sendWhatsApp"
+            >
+              <span data-i18n="calc_send_whatsapp">Отправить в WhatsApp</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/calculator.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initLayout();
+        initLangSwitcher();
+        applyTranslations();
+        initCalculator();
+      });
+
+      window.addEventListener("nm:lang-changed", () => {
+        if (!document.getElementById("calcMain")) return;
+        renderCalc();
+        renderCurrencySwitcher();
+      });
+    </script>
+  </body>
+</html>

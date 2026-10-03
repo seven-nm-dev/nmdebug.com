@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Разработка веб-сайтов — NM DEV</title>
+    <meta
+      name="description"
+      content="Современные веб-сайты и веб-приложения: интернет-магазины, CRM, SaaS, лендинги. 10+ направлений под ключ."
+    />
+    <meta
+      name="keywords"
+      content="разработка сайтов, интернет-магазин, CRM, SaaS, лендинг, веб-приложение"
+    />
+    <meta name="author" content="NM DEV" />
+    <link rel="canonical" href="https://nmdebug.com/web.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Разработка веб-сайтов — NM DEV" />
+    <meta
+      property="og:description"
+      content="Интернет-магазины, CRM, SaaS, лендинги — под ключ."
+    />
+    <meta property="og:image" content="https://nmdebug.com/assets/logo.png" />
+    <meta property="og:url" content="https://nmdebug.com/web.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Разработка веб-сайтов — NM DEV" />
+    <meta
+      name="twitter:description"
+      content="Интернет-магазины, CRM, SaaS, лендинги — под ключ."
+    />
+    <meta name="twitter:image" content="https://nmdebug.com/assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div id="header-slot"></div>
+
+      <main class="main-content">
+        <section class="container">
+          <a href="index.html" class="back-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            <span data-i18n="back">Назад</span>
+          </a>
+
+          <div class="page-header">
+            <h1 class="page-header__title" data-i18n="web_appbar_title">
+              Разработка Веб-Сайтов
+            </h1>
+          </div>
+
+          <h2 class="section-title" data-i18n="web_sidebar_title">
+            КАТЕГОРИИ ВЕБ-ПРОЕКТОВ
+          </h2>
+
+          <div class="chips" id="webChips"></div>
+
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <span class="browser-frame__dot browser-frame__dot--red"></span>
+              <span
+                class="browser-frame__dot browser-frame__dot--yellow"
+              ></span>
+              <span class="browser-frame__dot browser-frame__dot--green"></span>
+              <span class="browser-frame__url" id="browserUrl"
+                >https://demo.nmdebug.com</span
+              >
+            </div>
+            <div class="browser-frame__body" id="browserBody"></div>
+          </div>
+
+          <div class="actions">
+            <a
+              href="https://t.me/996551771108"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--telegram btn--lg btn--full"
+            >
+              <span data-i18n="mobile_contact_dev"
+                >Связаться с разработчиком</span
+              >
+            </a>
+            <a
+              href="https://wa.me/996551771108"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--whatsapp btn--lg btn--full"
+            >
+              <span data-i18n="mobile_write_whatsapp">Написать в WhatsApp</span>
+            </a>
+            <a
+              href="calculator.html?type=web"
+              class="btn btn--cyan btn--lg btn--full"
+            >
+              <span data-i18n="web_calc_button">Калькулятор</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer-slot"></div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/web.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initLayout();
+        initLangSwitcher();
+        applyTranslations();
+        initWeb();
+      });
+    </script>
+  </body>
+</html>

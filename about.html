@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>О нас — NM DEV</title>
+    <meta
+      name="description"
+      content="О студии NM DEV: чем занимаемся, где работаем, сроки, оплата и почему клиенты выбирают нас."
+    />
+    <meta
+      name="keywords"
+      content="о нас, NM DEV, студия разработки, о компании"
+    />
+    <meta name="author" content="NM DEV" />
+    <link rel="canonical" href="https://nmdebug.com/about.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="О нас — NM DEV" />
+    <meta
+      property="og:description"
+      content="Чем занимаемся, где работаем, сроки, оплата."
+    />
+    <meta property="og:image" content="https://nmdebug.com/assets/logo.png" />
+    <meta property="og:url" content="https://nmdebug.com/about.html" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="О нас — NM DEV" />
+    <meta
+      name="twitter:description"
+      content="Чем занимаемся, где работаем, сроки, оплата."
+    />
+    <meta name="twitter:image" content="https://nmdebug.com/assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div id="header-slot"></div>
+
+      <main class="main-content">
+        <section class="container">
+          <a href="index.html" class="back-btn">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            <span data-i18n="back">Назад</span>
+          </a>
+
+          <div class="page-header">
+            <h1 class="page-header__title" data-i18n="about_title">О нас</h1>
+          </div>
+
+          <div class="about__cards">
+            <div class="card card--accent">
+              <h3 data-i18n="about_what_title">Чем мы занимаемся</h3>
+              <p data-i18n="about_what_text">
+                Мы занимаемся разработкой цифровых продуктов.
+              </p>
+            </div>
+
+            <div class="card card--accent">
+              <h3 data-i18n="about_location_title">
+                Где и на каких языках работаем
+              </h3>
+              <p data-i18n="about_location_text">
+                Работаем с клиентами из Кыргызстана, Казахстана, России и США.
+              </p>
+            </div>
+
+            <div class="card card--accent">
+              <h3 data-i18n="about_deadlines_title">Сроки работы</h3>
+              <p data-i18n="about_deadlines_text">
+                Ориентировочные сроки разработки.
+              </p>
+            </div>
+
+            <div class="card card--accent">
+              <h3 data-i18n="about_payment_title">Оплата</h3>
+              <p data-i18n="about_payment_text">
+                Принимаем наличные, перевод, криптовалюту.
+              </p>
+            </div>
+
+            <div class="card card--accent">
+              <h3 data-i18n="about_promotion_title">Продвижение</h3>
+              <p data-i18n="about_promotion_text">
+                Поможем с продвижением продукта.
+              </p>
+            </div>
+
+            <div class="card card--accent">
+              <h3 data-i18n="about_why_title">Почему выбирают нас</h3>
+              <p data-i18n="about_why_text">
+                Делаем проекты под ключ, всегда на связи.
+              </p>
+            </div>
+          </div>
+
+          <div class="about__cta">
+            <a
+              href="https://wa.me/996551771108"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--whatsapp btn--lg btn--full"
+            >
+              <span data-i18n="about_button">Написать в WhatsApp</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer-slot"></div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lang.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initLayout();
+        initLangSwitcher();
+        applyTranslations();
+      });
+    </script>
+  </body>
+</html>
