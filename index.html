@@ -44,6 +44,15 @@
     />
     <meta name="twitter:image" content="https://nmdebug.com/assets/logo.png" />
 
+    <!-- Google Search Console verification -->
+    <meta
+      name="google-site-verification"
+      content="uITsm1VmWBfDrqtY0KKOXnNnbkf5jP0d5AJnN4bw2E"
+    />
+
+    <!-- Yandex Webmaster verification -->
+    <meta name="yandex-verification" content="9ddb2e425f783989" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png" />
 
@@ -53,11 +62,6 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-
-    <!-- Google Search Console verification -->
-<meta name="google-site-verification" content="uITsm1VmWBfDrqtY0KKOXnNnbkf5jP0d5AJnN4bw2E" /> 
-<meta name="yandex-verification" content="9ddb2e425f783989" />
-
 
     <!-- JSON-LD (Schema.org) -->
     <script type="application/ld+json">
@@ -82,6 +86,9 @@
       <div id="header-slot"></div>
 
       <main class="main-content">
+        <!-- ==================================================
+             4 КАРТОЧКИ
+             ================================================== -->
         <section class="home container">
           <h1 class="home__title" data-i18n="home_title">
             Разработка цифровых продуктов
@@ -222,6 +229,131 @@
             </a>
           </div>
         </section>
+
+        <!-- ==================================================
+             ФОРМА ОБРАТНОЙ СВЯЗИ
+             ================================================== -->
+        <section class="contact container">
+          <div class="contact__card">
+            <div class="contact__header">
+              <h2 class="contact__title" data-i18n="contact_title">
+                Расскажите о своём бизнесе — нам интересно
+              </h2>
+              <p class="contact__subtitle" data-i18n="contact_subtitle">
+                Отвечаем в течение 24 часов
+              </p>
+            </div>
+
+            <form class="contact__form" id="contactForm" novalidate>
+              <div class="field">
+                <label
+                  class="field__label"
+                  for="cName"
+                  data-i18n="contact_name"
+                >
+                  Ваше имя *
+                </label>
+                <input
+                  type="text"
+                  id="cName"
+                  name="name"
+                  class="field__input"
+                  placeholder="Например: Иван"
+                  required
+                />
+                <div class="field__error" data-error-for="name"></div>
+              </div>
+
+              <div class="field">
+                <label
+                  class="field__label"
+                  for="cPhone"
+                  data-i18n="contact_phone"
+                >
+                  Телефон / WhatsApp *
+                </label>
+                <input
+                  type="tel"
+                  id="cPhone"
+                  name="phone"
+                  class="field__input"
+                  placeholder="+996 555 123 456"
+                  required
+                />
+                <div class="field__error" data-error-for="phone"></div>
+              </div>
+
+              <div class="field">
+                <label
+                  class="field__label"
+                  for="cCompany"
+                  data-i18n="contact_company"
+                >
+                  Название бизнеса (опционально)
+                </label>
+                <input
+                  type="text"
+                  id="cCompany"
+                  name="company"
+                  class="field__input"
+                  placeholder="ООО «Ромашка»"
+                />
+              </div>
+
+              <div class="field">
+                <label
+                  class="field__label"
+                  for="cMessage"
+                  data-i18n="contact_message"
+                >
+                  Расскажите о своём проекте *
+                </label>
+                <textarea
+                  id="cMessage"
+                  name="message"
+                  class="field__textarea"
+                  rows="5"
+                  placeholder="Опишите идею, цели, сроки. Что нужно сделать?"
+                  required
+                ></textarea>
+                <div class="field__error" data-error-for="message"></div>
+              </div>
+
+              <div class="modal__actions" style="margin-top: 20px">
+                <button
+                  type="button"
+                  class="btn btn--telegram btn--full"
+                  id="contactSendTelegram"
+                  data-i18n="contact_send_telegram"
+                >
+                  Отправить в Telegram
+                </button>
+                <button
+                  type="button"
+                  class="btn btn--whatsapp btn--full"
+                  id="contactSendWhatsApp"
+                  data-i18n="contact_send_whatsapp"
+                >
+                  Отправить в WhatsApp
+                </button>
+              </div>
+
+              <p class="contact__privacy" data-i18n="contact_privacy">
+                Отправляя форму, вы соглашаетесь с обработкой персональных
+                данных
+              </p>
+
+              <div
+                class="contact__success"
+                id="contactSuccess"
+                hidden
+                data-i18n="contact_success"
+              >
+                ✅ Спасибо! Мы свяжемся с вами в течение 24 часов.
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
 
       <div id="footer-slot"></div>
@@ -231,6 +363,7 @@
     <script src="js/common.js"></script>
     <script src="js/lang.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/contact.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         initLayout({ typed: true });
@@ -238,6 +371,7 @@
         applyTranslations();
         initTypewriter();
         initTilesEntrance();
+        initContactForm();
       });
     </script>
   </body>
